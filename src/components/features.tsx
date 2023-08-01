@@ -24,21 +24,24 @@ export default function Features() {
        <div className="mt-16 max-w-6xl  mx-auto ">
       <div className="grid grid-cols-1 lg:grid-cols-12 ">
         <div className="col-span-5">
-            <div className="flex space-y-6 mr-4  mt-12 flex-col">
+            <motion.div 
+                     variants={fadeIn("right", "tween", 0.2, 1)}
+            className="flex space-y-6 mr-4  mt-12 flex-col">
 
             { 
                 FeatureLists.map(feature => (
-                    <>
-                    <motion.div
-                    variants={fadeIn("right", "tween", 0.2, 1)}
-                    className={`p-4 hover:bg-slate-200/[0.3] cursor-pointer hover:bg-opacity-5  space-y-4 rounded-md   text-gray-50 ${(selectedFeatureId + 1) === (feature.id) ? 'bg-slate-200/[0.3] bg-opacity-5' : ''}`} onClick={() => setSelectedFeatureId(feature.id - 1)} key={feature.id}>
+             
+                    <div
+           
+                    className={`p-4 hover:bg-slate-200/[0.3] cursor-pointer hover:bg-opacity-5  space-y-4 rounded-md   text-gray-50 ${(selectedFeatureId + 1) === (feature.id) ? 'bg-slate-200/[0.3] bg-opacity-5' : ''}`} onClick={() => setSelectedFeatureId(feature.id - 1)} 
+                    key={feature.id}>
                         <button className='text-xl font-semibold'>{feature.title}</button>
-                        <p>{feature.text}</p>
-                    </motion.div>
-                    </>
+                        <p className='lg:text-[15px] text-sm'>{feature.text}</p>
+                    </div>
+                 
                 ))
             }
-            </div>
+            </motion.div>
         </div>
         <motion.div
         variants={fadeIn("left", "tween", 0.2, 1)}

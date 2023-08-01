@@ -29,7 +29,7 @@ export default function Pricing() {
         className="mt-8 flex justify-center  lg:flex-row flex-col lg:space-x-4 space-x-0">
             {
                 PricingLists.map(pricing => (
-                    <>
+           
                      <div className={`p-8 w-full rounded-xl lg:max-w-sm text-white ${pricing.recommended ? "bg-blue-700 lg:-order-none order-first" : "bg-transparent"}`} key={pricing.id}>
                         <h2 className='text-4xl'>{pricing.price}</h2>
                         <h3 className='my-4  font-semibold'>{pricing.serviceType}</h3>
@@ -50,7 +50,7 @@ export default function Pricing() {
 
                          </div>
                      </div>
-                    </>
+                
                 ))
             }
         </motion.div>

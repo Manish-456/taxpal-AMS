@@ -19,14 +19,15 @@ export default function Testimonials() {
         title='Loved by businesses worldwide.'
         subtitle='Our software is so simple that people can’t help but fall in love with it. Simplicity is easy when you just skip tons of mission-critical features.'
         hClass='text-3xl lg:text-4xl mb-4'
-        pClass='px-3 text-gray-700 text-center max-w-xl mx-auto'
+        pClass='px-3 text-gray-700 lg:text-[15px] text-sm text-center max-w-xl mx-auto'
         />
 
         <div className="flex gap-6 items-start flex-wrap">
             {
                 testimonialLists.map(testimonial => (
-                    <>
+
                     <motion.div
+                    key={testimonial.id}
                     variants={fadeIn("left", "tween", 0.2, 1)}
                     className="relative px-4 rounded-xl border border-gray-500/[0.2] shadow-md mr-4 z-40 max-w-full lg:max-w-sm py-4">
                         <Icons.quotes className='absolute z-0 top-3 left-2 fill-gray-600/[0.1] ' />
@@ -44,6 +45,7 @@ export default function Testimonials() {
                                  src={testimonial.image}
                                 fill
                                 priority
+                                sizes=''
                                 referrerPolicy='no-referrer' 
                                 className='object-center rounded-full'
                                 alt={"users profile"} />
@@ -51,7 +53,7 @@ export default function Testimonials() {
                             </div>
                         </div>
                     </motion.div>
-                    </>
+                 
                 ))
             }
         </div>

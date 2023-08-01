@@ -18,14 +18,12 @@ export default function FAQ() {
         <div className="grid xl:grid-cols-3 mt-8 lg:grid-cols-2 grid-cols-1 ">
           {
             faqLists.map(faq => (
-              <>
               <div key={faq.question} className='mt-4 sm:mt-8 mr-2 p-4' >
                 <div className='font-thin mb-4 text-xl '>{faq.question}</div>
                 <div className="h-[1px] w-full bg-gray-700/[0.3] my-4"></div>
                 <p className='text-[15px] tracking-wide text-gray-700'>{faq.answer}</p>
                 <div className="h-[1px] w-full bg-gray-700/[0.3] my-4"></div>
               </div>
-              </>
             ))
           }
         </div>

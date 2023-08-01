@@ -26,8 +26,8 @@ export default function Suggestions() {
         {suggestionLists.map((suggestion) => {
           const Icon = Icons[suggestion.icon];
           return (
-            <>
-              <motion.div
+       
+              <div
                 className="p-4 flex flex-col relative space-y-4"
                 key={suggestion.title}
               >
@@ -38,10 +38,11 @@ export default function Suggestions() {
                 <p className="text-semibold ">{suggestion.subtitle}</p>
                 <p className="text-sm text-gray-400 ">{suggestion.text}</p>
                 <div className="bg-gray-200/[0.2] relative rounded-2xl w-full ">
-                  <div className="h-auto hover:scale-125   w-72 mx-auto aspect-square ">
+                  <div className="h-auto hover:scale-125 relative  w-72 mx-auto aspect-square ">
                     <Image
                       alt={suggestion.title}
                       className="object-contain"
+                      sizes=""
                       src={suggestion.image}
                       fill
                       priority
@@ -49,8 +50,8 @@ export default function Suggestions() {
                     />
                   </div>
                 </div>
-              </motion.div>
-            </>
+              </div>
+      
           );
         })}
       </div>
